@@ -1,14 +1,9 @@
-import { Queue } from "./data-structures";
-import { weave } from "./utils";
+import { LinkedList } from "./data-structures";
 
-const q1 = new Queue();
-q1.add("1");
-q1.add("2");
+const ll = new LinkedList();
+ll.insertFirst(1)
+ll.insertFirst(2)
+ll.insertFirst(3)
 
-const q2 = new Queue();
-q1.add(1);
-q1.add(2);
+console.log(ll);
 
-const q = weave(q1, q2);
-
-console.log(q);
