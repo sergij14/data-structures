@@ -1,3 +1,3 @@
-# Data Structures & Algorithms
+# Data Structures
 
-Built some data structures with TypeScript and implementing several algorithms.
+Built some data structures with TypeScript.
