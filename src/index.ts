@@ -10,6 +10,4 @@ ll.insertLast(4);
 
 // 3 --> 2 --> 1 ==> 4
 
-console.log(ll.removeAt(1));
-
-console.log(ll);
+ll.forEach((node) => console.log(node))

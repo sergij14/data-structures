@@ -143,4 +143,14 @@ export class LinkedList {
 
     return;
   }
+
+  forEach(fn: Function) {
+    let node = this.head;
+    let count = 0;
+    while (node) {
+      fn(node, count);
+      node = node.next;
+      count++;
+    }
+  }
 }
