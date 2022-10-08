@@ -1,7 +1,5 @@
 // Queue
 
-import { win32 } from "path";
-
 // FIFO - first in first out
 // creating an an array with some methods
 // unshift - adding in the beginning,
