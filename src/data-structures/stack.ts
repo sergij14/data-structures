@@ -3,7 +3,7 @@
 // FILO - first in last out
 
 export class Stack {
-  data: any[];
+  data: number[];
   constructor() {
     this.data = [];
   }

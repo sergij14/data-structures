@@ -6,12 +6,12 @@
 // Linked lists have head(points to the first item) and tail(points to the last item)
 // Each item points to the next to the next..., and last one points to null.
 
-type NodeType = Node | null;
+type NodeType = LLNode | null;
 
-class Node {
+class LLNode {
   next: NodeType;
 
-  constructor(public data: any, next = null) {
+  constructor(public data: number, next = null) {
     this.data = data;
     this.next = next;
   }
@@ -24,8 +24,8 @@ export class LinkedList {
     this.head = null;
   }
 
-  insertFirst(data: any) {
-    const newNode = new Node(data);
+  insertFirst(data: number) {
+    const newNode = new LLNode(data);
     newNode.next = this.head;
     this.head = newNode;
   }
@@ -97,8 +97,8 @@ export class LinkedList {
     }
   }
 
-  insertLast(data: any) {
-    const newNode = new Node(data);
+  insertLast(data: number) {
+    const newNode = new LLNode(data);
     const currLastNode = this.getLast();
 
     if (currLastNode) {

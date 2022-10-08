@@ -6,7 +6,7 @@
 // pop - removing from the end
 
 export class Queue {
-  data: any[];
+  data: number[];
 
   constructor() {
     this.data = [];
