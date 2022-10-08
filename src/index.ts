@@ -6,5 +6,5 @@ ll.insertFirst(2)
 ll.insertFirst(3)
 
 console.log(ll);
-console.log(ll.size());
+console.log(ll.getLast());
 
