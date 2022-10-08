@@ -6,8 +6,10 @@
 // Linked lists have head(points to the first item) and tail(points to the last item)
 // Each item points to the next to the next..., and last one points to null.
 
+type NodeType = Node | null;
+
 class Node {
-  next: Node | null;
+  next: NodeType;
 
   constructor(public data: any, next = null) {
     this.data = data;
@@ -16,7 +18,7 @@ class Node {
 }
 
 export class LinkedList {
-  head: Node | null;
+  head: NodeType;
 
   constructor() {
     this.head = null;
@@ -52,10 +54,45 @@ export class LinkedList {
     let node = this.head;
 
     while (node) {
-      if (!node?.next) {
+      if (!node.next) {
         return node;
       }
 
+      node = node.next;
+    }
+  }
+
+  clear() {
+    this.head = null;
+  }
+
+  removeFirst() {
+    if (!this.head) {
+      return;
+    }
+
+    this.head = this.head.next;
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return null;
+    }
+
+    if (!this.head.next) {
+      this.head = null;
+    }
+
+    let prevNode: NodeType = null;
+    let node: NodeType = this.head;
+
+    while (node) {
+      if (!node.next && prevNode) {
+        prevNode.next = null;
+        return;
+      }
+
+      prevNode = node;
       node = node.next;
     }
   }
