@@ -32,7 +32,7 @@ export class LinkedList {
 
   size() {
     let count = 0;
-    let node = this.head;
+    let node: NodeType = this.head;
 
     while (node) {
       count++;
@@ -100,11 +100,47 @@ export class LinkedList {
   insertLast(data: any) {
     const newNode = new Node(data);
     const currLastNode = this.getLast();
-    
+
     if (currLastNode) {
       currLastNode.next = newNode;
     } else {
       this.head = newNode;
     }
+  }
+
+  getAt(idx: number) {
+    if (!this.head) {
+      return null;
+    }
+
+    let count = 0;
+    let node: NodeType = this.head;
+
+    while (node) {
+      if (count === idx) {
+        return node;
+      }
+      count++;
+      node = node.next;
+    }
+
+    return null;
+  }
+
+  removeAt(idx: number) {
+    if (!this.head) {
+      return;
+    }
+    if (idx === 0) {
+      this.head = this.head.next;
+    }
+
+    let prevNode = this.getAt(idx - 1);
+
+    if (prevNode && prevNode.next) {
+      prevNode.next = prevNode.next.next;
+    }
+
+    return;
   }
 }
