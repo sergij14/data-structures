@@ -57,4 +57,18 @@ export class Tree {
       }
     }
   }
+
+  traverseDF(cb: (node: TNode) => void) {
+    const arr = [this.root];
+
+    while (arr.length) {
+      const node = arr.shift();
+
+      if (node) {
+        node.children.forEach((node) => arr.unshift(node));
+
+        cb(node);
+      }
+    }
+  }
 }
