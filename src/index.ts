@@ -1,4 +1,5 @@
-import { Queue, weave } from "./data-structures/queue";
+import { Queue } from "./data-structures";
+import { weave } from "./utils";
 
 const q1 = new Queue();
 q1.add("1");
