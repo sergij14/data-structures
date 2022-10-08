@@ -1,13 +1,12 @@
-import { LinkedList } from "./data-structures";
+import { TNode, Tree } from "./data-structures/tree";
 
-const ll = new LinkedList();
-ll.insertFirst(1);
-ll.insertFirst(2);
-ll.insertFirst(3);
+const t = new Tree();
+t.root = new TNode(1);
+t.root.add(2);
+t.root.add(3);
 
-ll.insertLast(4);
+let numbers: number[] = [];
 
+t.traverseBF((node) => numbers.push(node.data));
 
-// 3 --> 2 --> 1 ==> 4
-
-ll.forEach((node) => console.log(node))
+console.log(numbers);
