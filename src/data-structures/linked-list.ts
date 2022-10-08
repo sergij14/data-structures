@@ -76,7 +76,7 @@ export class LinkedList {
 
   removeLast() {
     if (!this.head) {
-      return null;
+      return;
     }
 
     if (!this.head.next) {
@@ -94,6 +94,17 @@ export class LinkedList {
 
       prevNode = node;
       node = node.next;
+    }
+  }
+
+  insertLast(data: any) {
+    const newNode = new Node(data);
+    const currLastNode = this.getLast();
+    
+    if (currLastNode) {
+      currLastNode.next = newNode;
+    } else {
+      this.head = newNode;
     }
   }
 }
