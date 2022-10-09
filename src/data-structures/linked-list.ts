@@ -144,7 +144,7 @@ export class LinkedList {
     return;
   }
 
-  forEach(fn: (node: LLNode) => void) {
+  forEach(fn: (node: LLNode, idx: number) => void) {
     let node = this.head;
     let count = 0;
     while (node) {
