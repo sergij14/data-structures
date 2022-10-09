@@ -72,3 +72,35 @@ export class Tree {
     }
   }
 }
+
+// Given the root node of a tree, function returns
+// an array where each element is the width
+// of the tree at each level.
+// --- Example
+// Given:
+//     0
+//   / |  \
+// 1   2   3
+// |       |
+// 4       5
+// Answer: [1, 3, 2]
+
+export function levelWidth(root: TNode) {
+  const STOPPER = "s" as const;
+  const arr = [root, STOPPER];
+  const widths = [0];
+
+  while (arr.length > 1) {
+    const node = arr.shift();
+
+    if (node === "s") {
+      widths.push(0);
+      arr.push(STOPPER);
+    } else {
+      node?.children.forEach((node) => arr.push(node));
+      widths[widths.length - 1]++;
+    }
+  }
+
+  return widths;
+}
