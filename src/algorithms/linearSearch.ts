@@ -8,7 +8,7 @@ export function linearSearch(arr: number[], el: number) {
     if (arr[idx] == el) {
       return idx;
     }
-    return false;
+    return null;
   }
 }
 
