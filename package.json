@@ -1,0 +1,28 @@
+{
+  "name": "data-structures-ts",
+  "version": "1.0.0",
+  "description": "Built some data structures with TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "npx nodemon",
+    "start": "npm run build && node build/index.js",
+    "build": "rimraf ./build && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergij14/data-structures-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergij14/data-structures-ts/issues"
+  },
+  "homepage": "https://github.com/sergij14/data-structures-ts#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.10",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
